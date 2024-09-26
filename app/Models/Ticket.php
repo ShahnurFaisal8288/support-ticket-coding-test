@@ -9,4 +9,10 @@ class Ticket extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    public function ticketResponse(){
+        return $this->hasOne(TicketResponse::class);
+    }
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }

@@ -28,6 +28,7 @@ Route::middleware('auth')->group(function () {
 });
 Route::resource('ticket',TicketController::class)->middleware(['auth', 'verified']);
 Route::resource('response',TicketResponseController::class)->middleware(['auth', 'verified']);
+Route::post('ticket/updateStatus/{id}',[TicketController::class,'ticketUpdateStatus'])->name('ticket.updateStatus');
 
 
 require __DIR__.'/auth.php';
